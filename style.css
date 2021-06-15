@@ -5,8 +5,32 @@
 }
 
 body {
-    font-family: 'Merriweather', serif;
+    font-family: "Merriweather", sans-serif;
     background-color: #ebf2ff;
+    overflow-x: hidden;
+    transition: 0.5s;
+  }
+
+.button__primary {
+    background-image: linear-gradient(
+        to right,
+        #ff512f 0%,
+        #dd2476 51%,
+        #ff512f 100%
+        );
+        color: #fff;
+        border: none;
+        padding: 12px;
+        border-radius: 6px;
+        cursor: pointer;
+}
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .navbar {
@@ -24,22 +48,35 @@ body {
     width: 100%;
 }
 
-.nav__item{
-    background-image: linear-gradient(
-    to right,
-    #ff512f 0%,
-    #dd2476 51%,
-    #ff512f 100%
-    );
-    color: #fff;
-    border: none;
-    padding: 12px;
-    border-radius: 6px;
-    cursor: pointer;
-}
+
 
 .nav__item:hover{
     border: 2px solid pink;
+}
+
+.hero__image__container {
+    position: relative;
+    width: 100%;
+}
+
+.hero__image__shape {
+    position: absolute;
+    right: 2;
+  }
+
+  .hero__image {
+    position: absolute;
+    width: 100%;
+    right: auto;
+    left: auto;
+    z-index: 2;
+    border-radius: 6px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  }
+
+.hero__text {
+    font-size: 30px;
+    margin: 20px 0;
 }
 
 @media (min-width: 768px) {
@@ -47,14 +84,35 @@ body {
         justify-content: space-between;
         padding: 1px 30px;
     }
+    .hero__container {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+    }
 }
 
 @media (min-width: 1020px){
+    .container {
+        max-width: 900px;
+    }
     .navbar__brand {
         width: 150px;
     }
-    .nav__item {
+    .button__primary {
         padding: 20px;
         font-size: 20px;
+    }
+    .hero__description {
+        width: 100%;
+    }
+    .hero__text {
+        font-size: 40px;
+    }
+}
+
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1250px;
     }
 }
